@@ -90,11 +90,26 @@ namespace MenuAndLogin
 
         static void CheckPalindrome()
         {
-            // this function should prompt the user for a word 
-            // it should then check top see if the word is an palindrone
-            // an palindromeis a word that is the same backwards as it is forwards
-            // You should call the method isPalindrome(string word) 
+
+            // this function prompts the user for a word 
+            // it them calls isPalindrome to check if the word is a Palindrome
+            // Using this design allows us to re-use isPalindrome in other projects and makes
+            // our code readable/maintainable and easy to test
+            
+            string word = "";
             Console.WriteLine("Palindrome Checker");
+
+            Console.WriteLine("Type in a word that you would like to check is a Palindrome");
+            word = Console.ReadLine();
+            if(isPalindrome(word)==true)  // why could this line just be if(isPalindrome(word))?
+            {
+                Console.WriteLine("{0} is a Palindrome", word);
+            }
+            else
+            {
+                Console.WriteLine("{0} is not a palindrome,word",word);
+            }
+
         }
         static void CheckIsogram()
         {
@@ -111,7 +126,7 @@ namespace MenuAndLogin
             // this function should check to see if the string in word is a isogram
             // it should return true if the string is an isogram and false
             // if the string is not an isodrome
-
+            // Extension - this function should not count upper and lower cases letters seperately
 
             return iso;
         }
@@ -122,6 +137,7 @@ namespace MenuAndLogin
             // this function should check to see if the string in word is a palindrome
             // it should return true if the string is a palindrome and false
             // if the string is not a palindrome
+            //Extension - this code should be case insenitive i.e. Otto is a palindrome
 
 
 
